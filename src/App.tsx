@@ -1,13 +1,17 @@
-import React from "react";
 import "./App.css";
 import Header from "./components/Header";
+import TalentPage from "./components/TalentPage";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      {/* Other components of your app */}
-    </div>
+    <LanguageProvider>
+      <div className="App">
+        <Header />
+        {/* Other components of your app */}
+        <TalentPage />
+      </div>
+    </LanguageProvider>
   );
 }
 

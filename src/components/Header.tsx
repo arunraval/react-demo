@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("English");
+  const { language, setLanguage, t } = useLanguage();
+
+  React.useEffect(() => {
+    document.documentElement.dir = language === "العربية" ? "rtl" : "ltr";
+  }, [language]);
 
   return (
     <nav className="flex items-center justify-between px-6 py-4  mx-auto bg-gradient-to-r from-[#f0f0ed] to-[#f9f4f2]">
@@ -28,12 +33,12 @@ const Header: React.FC = () => {
         >
           <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-sm font-semibold text-[#1a1a1a]">
             {[
-              "Home",
-              "About Us",
-              "Talents",
-              "How it Works",
-              "Faqs",
-              "Contact US",
+              t.home,
+              t.aboutUs,
+              t.talents,
+              t.howItWorks,
+              t.faqs,
+              t.contactUs,
             ].map((item) => (
               <li key={item}>
                 <a href="#" className="hover:underline block">
@@ -48,9 +53,9 @@ const Header: React.FC = () => {
           <div className="bg-white p-1 rounded-md flex gap-2">
             <button
               type="button"
-              onClick={() => setSelectedLanguage("English")}
+              onClick={() => setLanguage("English")}
               className={`text-sm cursor-pointer font-semibold rounded-md px-4 py-2 ${
-                selectedLanguage === "English"
+                language === "English"
                   ? "bg-black text-white"
                   : "text-[#1a1a1a]"
               }`}
@@ -59,9 +64,9 @@ const Header: React.FC = () => {
             </button>
             <button
               type="button"
-              onClick={() => setSelectedLanguage("العربية")}
+              onClick={() => setLanguage("العربية")}
               className={`text-sm cursor-pointer font-semibold rounded-md px-4 py-2 ${
-                selectedLanguage === "العربية"
+                language === "العربية"
                   ? "bg-black text-white"
                   : "text-[#1a1a1a]"
               }`}
@@ -71,9 +76,9 @@ const Header: React.FC = () => {
           </div>
           <button
             type="button"
-            className="bg-[#ff623d] text-white text-sm font-semibold rounded-md px-4 py-3"
+            className="bg-[#ff623d] cursor-pointer text-white text-sm font-semibold rounded-md px-4 py-3"
           >
-            Login
+            {t.login}
           </button>
 
           {/* Mobile menu button */}
