@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const TalentPage: React.FC = () => {
+  const { language, t } = useLanguage();
+
+  useEffect(() => {
+    document.documentElement.dir = language === "العربية" ? "rtl" : "ltr";
+  }, [language]);
   return (
     <div className="bg-[#f0f0f0] relative min-h-screen font-['Playfair_Display']">
       {/* Left vertical decorative pattern */}
@@ -27,16 +33,15 @@ const TalentPage: React.FC = () => {
           // }}
         >
           <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-2">
-            Unlock the Power
+            {t.hero.title}
             <br />
-            of Talent{" "}
+            {t.hero.subtitle}{" "}
             <span role="img" aria-label="rocket emoji">
               🚀
             </span>
           </h1>
           <p className="text-center text-xs sm:text-sm md:text-base font-semibold text-[#1a1a1a] mb-6">
-            Whether you're building a team or building a career — we've got you
-            covered.
+            {t.hero.section}
           </p>
 
           <div className="flex justify-center gap-4 mb-10 flex-wrap">
@@ -44,13 +49,13 @@ const TalentPage: React.FC = () => {
               aria-label="Hire Talent"
               className="bg-[#ff6f47] text-white text-xs sm:text-sm font-semibold rounded-md px-4 py-2 flex items-center gap-1 hover:bg-[#e65c34] transition"
             >
-              Hire Talent <i className="fas fa-arrow-right" />
+              {t.hero.hire} <i className="fas fa-arrow-right" />
             </button>
             <button
               aria-label="Become a Talent"
               className="bg-white text-[#ff6f47] text-xs sm:text-sm font-semibold rounded-md px-4 py-2 flex items-center gap-1 border border-[#ff6f47] hover:bg-[#ff6f47] hover:text-white transition"
             >
-              Become a Talent <i className="fas fa-arrow-right" />
+              {t.hero.Talent} <i className="fas fa-arrow-right" />
             </button>
           </div>
 
@@ -102,7 +107,7 @@ const TalentPage: React.FC = () => {
         {/* Bottom section */}
         <section className="bg-white rounded-3xl p-8 md:p-12  shadow-[0_10px_0_0_rgba(255,111,71,0.7),0_20px_0_0_rgba(51,17,17,0.7)] max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1a1a1a] mb-8">
-            Who We Are and What We Stand For
+            {t.hero.cardTitle}
           </h2>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             <div className="flex-shrink-0 rounded-3xl overflow-hidden w-full max-w-md">
@@ -116,21 +121,16 @@ const TalentPage: React.FC = () => {
             </div>
             <div className="text-xs sm:text-sm text-[#1a1a1a] max-w-xl">
               <p className="mb-4 font-semibold leading-tight">
-                We are a team of passionate innovators, designers, and
-                strategists committed to helping businesses grow and succeed.
-                With years of industry experience, we blend creativity with
-                technology to deliver solutions that truly make a difference
-                process.
+                {t.hero.cardPr}
               </p>
               <p className="mb-6 font-semibold leading-tight">
-                The point of using Lorem Ipsum is that it has a more-or-less
-                normal distribution
+                {t.hero.cardPr1}
               </p>
               <button
                 aria-label="Hire Talent"
                 className="bg-[#ff6f47] text-white text-xs sm:text-sm font-semibold rounded-md px-4 py-2 flex items-center gap-1 hover:bg-[#e65c34] transition"
               >
-                Hire Talent <i className="fas fa-arrow-right" />
+                {t.hero.hire} <i className="fas fa-arrow-right" />
               </button>
             </div>
           </div>

@@ -14,10 +14,19 @@ export const translations = {
 
     // Add more sections here
     // Example:
-    // hero: {
-    //   title: "Welcome",
-    //   subtitle: "Find your next opportunity"
-    // }
+    hero: {
+      title: "Unlock the Power",
+      subtitle: "of Talent",
+      section:
+        " Whether you're building a team or building a career — we've got you covered.",
+      hire: "Hire Talent",
+      Talent: "Become a Talent",
+      cardTitle: "Who We Are and What We Stand For",
+      cardPr:
+        "We are a team of passionate innovators, designers, and strategists committed to helping businesses grow and succeed. With years of industry experience, we blend creativity with technology to deliver solutions that truly make a difference process.",
+      cardPr1:
+        "The point of using Lorem Ipsum is that it has a more-or-less normal distribution",
+    },
   },
   العربية: {
     // Header
@@ -31,10 +40,19 @@ export const translations = {
 
     // Add more sections here
     // Example:
-    // hero: {
-    //   title: "مرحباً",
-    //   subtitle: "ابحث عن فرصتك القادمة"
-    // }
+    hero: {
+      title: "فتح الطاقة",
+      subtitle: "من المواهب",
+      section:
+        "سواء كنت تقوم ببناء فريق أو بناء مهنة - فنحن نوفر لك ما تحتاجه.",
+      hire: "توظيف المواهب",
+      Talent: "تصبح موهبة",
+      cardTitle: "من نحن وماذا نمثل",
+      cardPr:
+        "نحن فريق من المبتكرين والمصممين والاستراتيجيين المتحمسين، ملتزمون بمساعدة الشركات على النمو والنجاح. بخبرة تمتد لسنوات في هذا المجال، نمزج الإبداع بالتكنولوجيا لتقديم حلول تُحدث فرقًا حقيقيًا.",
+      cardPr1:
+        "إن الهدف من استخدام Lorem Ipsum هو أنه يحتوي على توزيع طبيعي إلى حد ما",
+    },
   },
 };
 

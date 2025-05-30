@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.documentElement.dir = language === "العربية" ? "rtl" : "ltr";
   }, [language]);
 
